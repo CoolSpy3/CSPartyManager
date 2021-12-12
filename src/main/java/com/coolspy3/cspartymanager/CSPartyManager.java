@@ -15,11 +15,10 @@ import com.coolspy3.csmodloader.network.PacketHandler;
 import com.coolspy3.csmodloader.network.SubscribeToPacketStream;
 import com.coolspy3.csmodloader.util.Utils;
 import com.coolspy3.cspackets.packets.ClientChatSendPacket;
-import com.coolspy3.cspackets.packets.ServerChatSendPacket;
 import com.coolspy3.hypixelapi.APIConfig;
+import com.coolspy3.util.ClientChatReceiveEvent;
 import com.coolspy3.util.ModUtil;
 import com.coolspy3.util.ServerJoinEvent;
-
 import me.kbrewster.exceptions.APIException;
 import me.kbrewster.mojangapi.MojangAPI;
 import net.hypixel.api.HypixelAPI;
@@ -27,8 +26,8 @@ import net.hypixel.api.reply.FriendsReply;
 import net.hypixel.api.reply.FriendsReply.FriendShip;
 
 @Mod(id = "cspartymanager", name = "CSPartyManager",
-        description = "Adds commands for management of parties on Hypixel", version = "2.0.0",
-        dependencies = {"csmodloader:[1,2)", "cspackets:[1,2)", "csutils:[1,2)",
+        description = "Adds commands for management of parties on Hypixel", version = "2.1.0",
+        dependencies = {"csmodloader:[1,2)", "cspackets:[1.2,2)", "csutils:[1.1,2)",
                 "cshypixelapi:[2,3)"})
 public class CSPartyManager implements Entrypoint
 {
@@ -58,7 +57,7 @@ public class CSPartyManager implements Entrypoint
     }
 
     @SubscribeToPacketStream
-    public void onChatMessageReceived(ServerChatSendPacket event)
+    public void onChatMessageReceived(ClientChatReceiveEvent event)
     {
         if (Config.getInstance().autoAcceptEnabled)
         {
