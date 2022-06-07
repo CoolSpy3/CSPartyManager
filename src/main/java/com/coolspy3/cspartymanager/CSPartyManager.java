@@ -19,6 +19,7 @@ import com.coolspy3.hypixelapi.APIConfig;
 import com.coolspy3.util.ClientChatReceiveEvent;
 import com.coolspy3.util.ModUtil;
 import com.coolspy3.util.ServerJoinEvent;
+
 import me.kbrewster.exceptions.APIException;
 import me.kbrewster.mojangapi.MojangAPI;
 import net.hypixel.api.HypixelAPI;
@@ -26,14 +27,14 @@ import net.hypixel.api.reply.FriendsReply;
 import net.hypixel.api.reply.FriendsReply.FriendShip;
 
 @Mod(id = "cspartymanager", name = "CSPartyManager",
-        description = "Adds commands for management of parties on Hypixel", version = "2.1.0",
+        description = "Adds commands for management of parties on Hypixel", version = "2.1.1",
         dependencies = {"csmodloader:[1,2)", "cspackets:[1.2,2)", "csutils:[1.1,2)",
                 "cshypixelapi:[2,3)"})
 public class CSPartyManager implements Entrypoint
 {
 
     public static final String inviteRegex =
-            "^-----------------------------\\n(\\[[a-zA-Z0-9_\\+]+\\] )?([a-zA-Z0-9_]+) has invited you to join their party!\\nYou have 60 seconds to accept\\. Click here to join!\\n-----------------------------$";
+            "^-+\\n(\\[[a-zA-Z0-9_\\+]+\\] )?([a-zA-Z0-9_]+) has invited you to join their party!\\nYou have 60 seconds to accept\\. Click here to join!\\n-+$";
     public static final Pattern invitePattern = Pattern.compile(inviteRegex);
     public static final String joinRegex = "Friend > ([a-zA-Z0-9_]+) joined\\.";
     public static final Pattern joinPattern = Pattern.compile(joinRegex);
