@@ -27,9 +27,9 @@ import net.hypixel.api.reply.FriendsReply;
 import net.hypixel.api.reply.FriendsReply.FriendShip;
 
 @Mod(id = "cspartymanager", name = "CSPartyManager",
-        description = "Adds commands for management of parties on Hypixel", version = "2.1.1",
-        dependencies = {"csmodloader:[1,2)", "cspackets:[1.2,2)", "csutils:[1.1,2)",
-                "cshypixelapi:[2,3)"})
+        description = "Adds commands for management of parties on Hypixel", version = "2.1.2",
+        dependencies = {"csmodloader:[1.0.1,2)", "cspackets:[1.2.1,2)", "csutils:[1.1.1,2)",
+                "cshypixelapi:[3,4)"})
 public class CSPartyManager implements Entrypoint
 {
 
